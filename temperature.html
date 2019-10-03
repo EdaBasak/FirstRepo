@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="https://maeyler.github.io/favicon.ico">
+    <title>Temperature </title>
+
+  <style> /* CSS comment */
+    body { max-width: 440px; }
+    #inp { width: 50px }
+    #out {
+        font-size: 18px;
+        background: blue;
+        color: white;
+        text-align: center;
+        padding: 10px;
+    }
+  </style>
+</head>
+
+<body>   <!-- HTML comment: Modify all items marked xxx -->
+
+<h2 id=title>This text is not shown. Why?</h2>
+Celcius:
+<input type=number id=celcius value=0 onChange="fahrenheit.value= Number((celcius.value*1.8 )+32)">
+<br>
+Fahrenheit:
+<input type=number id=fahrenheit onChange="celcius.value= Number((fahrenheit.value-32)/1.8">
+&emsp;
+
+
+
+
+
+
+<script>
+"use strict";
+// JavaScript comment
+
+    //global variable id is the HTML element with id 
+    //const title = document.getElementById("title");
+  
+</script>
+
+</body>
+</html>
