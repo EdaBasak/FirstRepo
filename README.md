@@ -8,5 +8,8 @@
 
 [CW3](https://edabasak.github.io/FirstRepo/aa.png)
 
-.[CW4](https://edabasak.github.io/FirstRepo/Student%20Database.html)
+[CW4- Student Database](https://edabasak.github.io/FirstRepo/Student%20Database.html)
 
+[CW5- Inspector](https://edabasak.github.io/FirstRepo/work/EloquentJS.html)
+
+[CW6- File operation](https://edabasak.github.io/FirstRepo/readfile.html)
