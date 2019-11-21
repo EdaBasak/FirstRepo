@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)https://maeyler.github.io/305/work/Timing -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="https://maeyler.github.io/305/images/icon192.png">
+    <script src="./Clock 13_05_files/Database.js"></script>
+    <title>Clock 13:05</title>
+
+    <style>
+        body {
+            max-width: 450px;
+        }
+
+        #clock {
+            font-size: 48px;
+            background-color: blue;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Time Measurement</h2>
+
+    <h3>Simple Clock</h3>
+    <div id="clock">13:05:41</div>
+
+    <h3>Set Intersection</h3>
+    <button onclick="search()">Search</button>
+
+    <p id="out">
+        <a href="https://maeyler.github.io/BLM305-2018/exam/Midterm%20solution.pdf">
+        </a>
+        <br></p>
+
+    
+
+    <script>
+        "use strict";
+        // Simple Clock
+        // Make a large Set
+        const url = "https://maeyler.github.io/JS/data/"
+        const array = []     // Student objects
+        const map = new Map() // distinct names
+        function readData(file) {
+            console.log("readData " + file)
+            fetch(url + file)
+                .then(r => r.text())
+                .then(addStudents)
+                .catch(console.error)
+        }
+        function parseStudent(line) {
+            let [id, name, gpa, ...L] = line.split('\t')
+            let std = new Student(id, name, gpa)
+            std.courses = L; return std
+        }
+        function addStudents(txt) {
+            let msg = "<br>Data contains "
+                + txt.length + " chars, "
+            let a = txt.split('\n')
+            msg += a.length + " lines <br>"
+            for (let s of a) {
+                let std = parseStudent(s)
+                array.push(std.id);
+                map.set(std.id, std);
+            }
+            msg += array.length + " students, "
+            msg += map.length + " distinct names"
+            out.innerHTML += msg
+        }
+        // Set Intersection & timing
+        function timing(f) {
+            let t = performance.now() //more accurate than Date.now()
+            let x = f(set, set)   //calculate intersection by itself
+            t = performance.now() - t
+            let s = f.name + ": " + t.toPrecision(3) + " msec -- size:" + x.size
+            out.innerHTML += "<br>" + s; console.log(s)
+        }
+
+        function search() {
+
+            let counterMap = 0;
+            let counterArray = 0;
+            let random = 116691061;
+            let t = performance.now();
+            let temp = random;
+            for (let i = 0; i < 10000; i++) {
+                if (array.includes(temp + "")) {
+                    counterArray++;
+                }
+                temp++;
+            }
+            t = performance.now() - t
+            //console.log("array :" + t);
+            let arr = "Timing Array " + t.toPrecision(3) + " msec " + " Counter Array : " + counterArray
+            let tMap = performance.now();
+            temp = random;
+            for (let i = 0; i < 10000; i++) {
+                if (map.has(temp + "")) {
+                    counterMap++;
+                }
+                temp++;
+            }
+            tMap = performance.now() - tMap
+            let m = "Timing Map " + tMap.toPrecision(3) + " msec " + " Counter Map : " + counterMap;
+            out.innerHTML = arr + " <br> " + m;
+        }
+
+        //title.innerText = document.title;
+
+        readData("Students.txt")
+    </script>
+
+
+
+</body>
+
+</html>
