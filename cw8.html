@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="database.js"></script>
+    <title>CW 7</title>
+    <link rel="icon" sizes="192x192" href="images/JS.png">
+<link rel="manifest" href="manifest.json">
+</head>
+<style>
+    table {
+        width:400px;
+    }
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+    table.t01 tbody:nth-child(even) {
+        background-color: white;
+    }
+    table.t01 tbody:nth-child(odd) {
+        background-color: #fff;
+    }
+    table.t01 tbody tr th {
+        background-color:white;
+    }
+    table.t01 tbody:first-child tr th{
+        background-color:purple;
+      
+    }
+</style>
+<body>
+    <h2 id="title">Fill the Table</h2>
+    <p id="info"></p>
+    <hr />
+    <h5 id="subTitle"></h5>
+    <p>
+        <table id="datas" class="t01">
+        </table>
+    </p>
+    <hr />
+    <script>
+        var c = new ReadJSON('https://edabasak.github.io/FirstRepo/index.json')
+        c.readData()
+       
+    </script>
+</body>
+</html>
