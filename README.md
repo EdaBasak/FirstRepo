@@ -15,3 +15,5 @@
 [CW6- File operation](https://edabasak.github.io/FirstRepo/readfile.html)
 
 [CW7- Timing](https://edabasak.github.io/FirstRepo/clock.html)
+
+[CW7- Timing](https://edabasak.github.io/FirstRepo/cw8.html)
