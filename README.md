@@ -13,3 +13,5 @@
 [CW5- Inspector](https://edabasak.github.io/FirstRepo/work/EloquentJS.html)
 
 [CW6- File operation](https://edabasak.github.io/FirstRepo/readfile.html)
+
+[CW7- Timing](https://edabasak.github.io/FirstRepo/clock.html)
