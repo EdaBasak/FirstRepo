@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://maeyler.github.io/305/work/GitHub_Users.html -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" sizes="192x192" href="https://maeyler.github.io/JS/images/JS.png">
+    <title>GitHub Users</title>
+
+  <style>
+    body {
+        width: 200;
+        height: 200;
+    }
+    img {
+        padding-right: 22px; 
+        width: 70px;
+    }
+    
+  </style>
+</head>
+
+<body>
+
+<h2 id="title">GitHub Users</h2>
+<input type="text" id="usr" value="hakandilek" onchange="readUser()">
+<p id="out"><img src="./GitHub Users_files/1072473" align="left">Hakan Dilek, Erlangen, Germany<br><a href="https://github.com/hakandilek" target="NewTab">github.com/hakandilek</a><br>103 repos<br><br>2019-02-angular-workshop-erlangen, 2048, angular-github, angular-strap, asciidoctor-diagram, asciidoctor-mathematical, Base64, Cambridge, CanvasCameraPlugin, cse100, cse470, CSE470-2015, cse495, currying-java, cwise, cyripto_trader, deep-learning-keras-tensorflow, DefinitelyTyped, dilek.me, django-blueprint, docker-asciidoctor, docker-cloud-cli, docker-stacks, drop-dash, dropwizard-archetype, dropwizard-jobs, dw-shiro-bundle, eclipse-templates, embed-influxDB, fiber</p>
+<hr>
+
+<b>Sample code</b>
+<pre id="sample">function listRepos(b) {<br>    if (b.length) <br>      out.innerHTML += <br>        b.map(x =&gt; x.name).join(", ")<br>}<br>function userData(u) {<br>    if (!u || !u.login) {<br>      error(usr.value+' not found')<br>      return<br>    } <br>    //u.login is the same as usr.value<br>    out.style.color = ''<br>    out.innerHTML = ''<br>    //start with a tiny image<br>    let i = document.createElement("img")<br>    i.src = u.avatar_url<br>    i.align = "left"<br>    out.appendChild(i)<br>    //add name and location<br>    let s = (u.name? u.name : u.login)<br>    if (u.location) s += ", "+u.location<br>    out.innerHTML += s+BR; console.log(s)<br>    //add link to GitHub <br>    let h = "github.com/"+u.login<br>    let a = document.createElement("a")<br>    a.href = "https://"+h<br>    a.target = "NewTab"<br>    a.innerText = h<br>    out.appendChild(a)<br>    //add repo count<br>    let p = u.public_repos+" repos"<br>    out.innerHTML += BR+p+BR+BR<br>    fetch(URL+u.login+"/repos")<br>      .then(r =&gt; r.json()) <br>      .then(listRepos).catch(error)<br>}<br>function readUser() {<br>    fetch(URL+usr.value)<br>      .then(r =&gt; r.ok? r.json() : null) <br>      .then(userData).catch(error)<br>}</pre>
+<hr>
+<p>Ref: <a href="https://developer.github.com/v3/#rate-limiting" target="NewTab">GitHub Developer</a>
+</p>
+
+
+<script>
+"use strict";
+const NL = "\n", BR = "<BR>", 
+    URL = "https://api.github.com/users/"
+function error(t) {
+    out.style.color = 'red'
+    out.innerText = t; console.log(t)
+}
+function listRepos(b) {
+    if (b.length) 
+      out.innerHTML += 
+        b.map(x => x.url).join(", ")
+}
+function userData(u) {
+    if (!u || !u.login) {
+      error(usr.value+' not found')
+      return
+    } 
+
+    
+    //u.login is the same as usr.value
+    out.style.color = ''
+    out.innerHTML = ''
+    //start with a tiny image
+    let i = document.createElement("img")
+    i.src = u.avatar_url
+    i.align = "left"
+    
+    out.appendChild(i)
+    //add name and location
+    let s = (u.name? u.name : u.login)
+    if (u.location) s += ", "+u.location
+    out.innerHTML += s+BR; console.log(s)
+    //add link to GitHub 
+    let h = "github.com/"+u.login
+    let a = document.createElement("a")
+    a.href = "https://"+h
+    a.target = "NewTab"
+    a.innerText = h
+    out.appendChild(a)
+    //add repo count
+    
+    let id=u.id;
+    let b=u.blog;
+    let mail=u.email;
+    let update=u.updated_at;
+    let company=u.company;
+
+    let p = u.public_repos+" repos"
+out.innerHTML+= BR+p+BR+BR+"id: " +BR +"blog:"+ b+BR+"mail:"+mail+BR+ "Updated at:"+ update +BR+company
+
+    fetch(URL+u.login+"/repos")
+      .then(r => r.json()) 
+      .then(listRepos).catch(error)
+}
+function readUser() {
+    fetch(URL+usr.value)
+      .then(r => r.ok? r.json() : null) 
+      .then(userData).catch(error)
+}
+
+    title.innerText = document.title
+    sample.innerText =  
+       listRepos +NL+ userData +NL+ readUser
+    out.innerText = "Reading data"
+    readUser()
+
+
+</script>
+
+
+
+</body></html>
