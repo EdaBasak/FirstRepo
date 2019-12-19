@@ -16,7 +16,7 @@
 
 [CW7- Timing](https://edabasak.github.io/FirstRepo/clock.html)
 
-[CW8](https://edabasak.github.io/FirstRepo/cw8.html)
+[CW8- Json Table](https://edabasak.github.io/FirstRepo/cw8.html)
 
 [HW1- Poisson Table](https://edabasak.github.io/FirstRepo/table.html) 
 
