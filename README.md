@@ -18,4 +18,6 @@
 
 [CW8](https://edabasak.github.io/FirstRepo/cw8.html)
 
-[HW1](https://edabasak.github.io/FirstRepo/table.html)
+[HW1- Poisson Table](https://edabasak.github.io/FirstRepo/table.html) 
+
+
