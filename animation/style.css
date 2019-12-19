@@ -1,0 +1,35 @@
+#penguin {
+    color: # 000000;
+    width: 50%;
+    position: absolute;
+    top: 25%; left: 40%;
+    transform-origin: 0 0 ;
+    
+    backface-visibility: hidden;
+    will-change: transform, color;
+  }
+  .wrapper {
+    position: relative;
+    width: 100%; height: 100%;
+    overflow: hidden;
+  }
+  path {
+    fill: currentColor;
+  }
+  
+  body {
+    background: black;
+  }
+  
+  html, body { height: 100%}
+  .road{
+    width:auto;
+    height:auto;
+    background:url('b1.jpg') no-repeat center 0, url('b2.jpg') no-repeat top center;
+    transition:background 1s;
+  }
+  .road:hover{
+    background:url('backgrb1ound.jpg') no-repeat center 310px, url('b2.jpg') no-repeat bottom center;
+   }
+   
+
