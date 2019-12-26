@@ -1,84 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>GGK20</title>
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 
-	<title>Geleceğin Girişimci Kadınları Online Bilet Sistemi</title>
+<!--===============================================================================================-->
 
-	<link href="https://fonts.googleapis.com/css?family=Cantata+One" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Imprima" rel="stylesheet">
-
-
-	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
-
-
-
-	<link type="text/css" rel="stylesheet" href="css/style.css" />
 
 </head>
-
 <body>
-		<h1 style="text-align: center; Georgia, 'Times New Roman', Times, serif;">GELECEĞİN GİRİŞİMCİ KADINLARI ONLINE BİLET SİSTEMİ </h1>
-	<div id="booking" class="section">
-		<div class="section-center">
-			<div class="container">
-				<div class="row">
-					
-					<div class="booking-cta">
-						
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+		<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+
+		<!-- TODO: Add SDKs for Firebase products that you want to use
+		 https://firebase.google.com/docs/web/setup#available-libraries -->
+		<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
+
+		<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+		<script>
+			// Your web app's Firebase configuration
+			var firebaseConfig = {
+				apiKey: "AIzaSyAzYyDeHlLG0uIQeNZYK3ODIVsRuHgNyw0",
+				authDomain: "ticket-sale-b6ff6.firebaseapp.com",
+				databaseURL: "https://ticket-sale-b6ff6.firebaseio.com",
+				projectId: "ticket-sale-b6ff6",
+				storageBucket: "ticket-sale-b6ff6.appspot.com",
+				messagingSenderId: "444799703234",
+				appId: "1:444799703234:web:d4bd4e9ebfbcb7d538c35b",
+				measurementId: "G-6S19NJC7S7"
+			};
+			// Initialize Firebase
+			firebase.initializeApp(firebaseConfig);
+			firebase.analytics();
+		</script>
+
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+			<div class="wrap-login100 p-t-30 p-b-50">
+				<span class="login100-form-title p-b-41">
+					<h2>GGK 2020</h2>
+					<h3> TICKET SALE</h3>
+				</span>
+				<form class="login100-form validate-form p-b-33 p-t-5">
+
+						  <div class="logo"> <img src="C:\Users\BSK\Desktop\ticket sale\Etkinlik_kurallari\logo.png" style="center;">  </div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Enter username">
+						<input class="input100" id="name_surname" type="text" name="username" value="" placeholder="Full Name">
+						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
 					</div>
-					
-					<div class="booking-form">
-						<form>
-							<div class="col-md-8">
-								<div class="form-group">
-									<span class="form-label">ADINIZ VE SOYADINIZ</span>
-									<input class="form-control" type="text" placeholder="Adınız ve soyadınız biletiniz üzerinde yer alacaktır">
-								</div>
-							</div>
-							<div class="col-md-2">
-								<div class="form-group">
-									<span class="form-label">Misafir Sayısı</span>
-									<select class="form-control">
-										<option>1</option>
-										<option>2</option>
-										<option>3</option>
-										<option>4</option>
-										<option>5</option>
-										
-									</select>
-									<span class="select-arrow"></span>
-								</div>
-							</div>
-							<div class="col-md-2">
-								<div class="form-group">
-									<span class="form-label">Çocuk Sayısı</span>
-									<select class="form-control">
-										<option>0</option>
-										<option>1</option>
-										<option>2</option>
-									</select>
-									<span class="select-arrow"></span>
-								</div>
-							</div>
-							
-									<div class="col-md-4">
-											<div class="form-btn">
-												<button class="submit-btn" >KAYDET</button>
-											</div>
-										</div>
-							
-							
-						</form>
+
+					<div class="wrap-input100 validate-input" >
+						<input id="email" class="input100" type="text" name="pass" placeholder="Enter e-mail address">
+						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
 					</div>
-				</div>
+
+					<div class="wrap-input100 validate-input" style="text-align: center; size: 20px;" >
+						<a class="check" href="C:\Users\BSK\Desktop\ticket sale\Etkinlik_kurallari\kurallar.html" ><input type="checkbox" style="text-align: center;"> I agree to the terms of service</a>
+
+					</div>
+
+					<div class="container-login100-form-btn m-t-32">
+						<button id="submit_btn" onclick="submitClick()" class="login100-form-btn">
+							Approve
+						</button>
+					</div>
+
+				</form>
 			</div>
 		</div>
 	</div>
-</body>
 
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+
+
+</body>
+<script src="js/main.js"></script>
 </html>
