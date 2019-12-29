@@ -35,28 +35,10 @@
 <body>
 		<!-- The core Firebase JS SDK is always required and must be listed first -->
 		<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
-
 		<!-- TODO: Add SDKs for Firebase products that you want to use
 		 https://firebase.google.com/docs/web/setup#available-libraries -->
 		<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
-
 		<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
-		<script>
-			// Your web app's Firebase configuration
-			var firebaseConfig = {
-				apiKey: "AIzaSyAzYyDeHlLG0uIQeNZYK3ODIVsRuHgNyw0",
-				authDomain: "ticket-sale-b6ff6.firebaseapp.com",
-				databaseURL: "https://ticket-sale-b6ff6.firebaseio.com",
-				projectId: "ticket-sale-b6ff6",
-				storageBucket: "ticket-sale-b6ff6.appspot.com",
-				messagingSenderId: "444799703234",
-				appId: "1:444799703234:web:d4bd4e9ebfbcb7d538c35b",
-				measurementId: "G-6S19NJC7S7"
-			};
-			// Initialize Firebase
-			firebase.initializeApp(firebaseConfig);
-			firebase.analytics();
-		</script>
 
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
@@ -67,7 +49,7 @@
 				</span>
 				<form class="login100-form validate-form p-b-33 p-t-5">
 
-						  <div class="logo"> <img src="C:\Users\BSK\Desktop\ticket sale\Etkinlik_kurallari\logo.png" style="center;">  </div>
+						  <div class="logo"> <img src="images\logo.png" style="center;">  </div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
 						<input class="input100" id="name_surname" type="text" name="username" value="" placeholder="Full Name">
@@ -80,12 +62,12 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" style="text-align: center; size: 20px;" >
-						<a class="check" href="C:\Users\BSK\Desktop\ticket sale\Etkinlik_kurallari\kurallar.html" ><input type="checkbox" style="text-align: center;"> I agree to the terms of service</a>
+						<a class="check" href="rules.html"  > <br> <input type="checkbox" id="check" onselect="checked()" style="text-align: center;"> I agree to the terms of service</a>
 
 					</div>
 
 					<div class="container-login100-form-btn m-t-32">
-						<button id="submit_btn" onclick="submitClick()" class="login100-form-btn">
+						<button id="submit_btn" onclick="submitClick()"  class="login100-form-btn">
 							Approve
 						</button>
 					</div>
