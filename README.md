@@ -16,7 +16,7 @@
 
 [CW7- Timing](https://edabasak.github.io/FirstRepo/clock.html)
 
-[CW8- Json Table](https://edabasak.github.io/FirstRepo/cw8.html)
+[CW8- Json Table](https://github.com/EdaBasak/FirstRepo/blob/master/CW8/CW8.html)
 
 [CW9- External API](https://github.com/EdaBasak/FirstRepo/blob/master/GitHub%20Users.html)
 
