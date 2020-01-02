@@ -399,7 +399,7 @@ html {
 
 .plane {
   margin: 20px auto;
-  max-width: 300px;
+  max-width: 500px;
 }
 
 .cockpit {
@@ -407,7 +407,7 @@ html {
   position: relative;
   overflow: hidden;
   text-align: center;
-  border-bottom: 5px solid #d8d8d8;
+  border-bottom: 10px solid #d8d8d8;
 }
 .cockpit:before {
   content: "";
@@ -440,12 +440,12 @@ ol {
 }
 
 .seat {
-  display: flex;
-  flex: 0 0 14.28571428571429%;
-  padding: 10px;
+  display: block;
+  flex: 2 2 14.28571428571429%;
+  padding: 3px;
   position: relative;
 }
-.seat:nth-child(3) {
+.seat:nth-child(5) {
   margin-right: 3%;
 }
 .seat input[type=checkbox] {
@@ -508,6 +508,80 @@ ol {
   border-radius: 3px;
 }
 .seat label:hover {
+  cursor: pointer;
+  box-shadow: 0 0 0px 2px #5C6AFF;
+}
+
+
+.filledSeat {
+  display: block;
+  flex: 2 2 14.28571428571429%;
+  padding: 3px;
+  position: relative;
+}
+.filledSeat:nth-child(5) {
+  margin-right: 3%;
+}
+.filledSeat input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+}
+.filledSeat input[type=checkbox]:checked + label {
+  background: #bada55;
+  -webkit-animation-name: rubberBand;
+  animation-name: rubberBand;
+  animation-duration: 300ms;
+  animation-fill-mode: both;
+}
+.filledSeat input[type=checkbox]:disabled + label {
+  background: #dddddd;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+.filledSeat input[type=checkbox]:disabled + label:after {
+  display: block;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.5rem;
+  padding: 4px 0;
+  background: rgb(255, 0, 0);
+  border-radius: 5px;
+  animation-duration: 300ms;
+  animation-fill-mode: both;
+}
+.filledSeat input[type=checkbox]:disabled + label:hover {
+  box-shadow: none;
+  cursor: not-allowed;
+}
+.filledSeat label {
+  display: block;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.5rem;
+  padding: 4px 0;
+  background: rgb(245, 54, 54);
+  border-radius: 5px;
+  animation-duration: 300ms;
+  animation-fill-mode: both;
+}
+.filledSeat label:before {
+  content: "";
+  position: absolute;
+  width: 75%;
+  height: 75%;
+  top: 1px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 3px;
+}
+.filledSeat label:hover {
   cursor: pointer;
   box-shadow: 0 0 0px 2px #5C6AFF;
 }

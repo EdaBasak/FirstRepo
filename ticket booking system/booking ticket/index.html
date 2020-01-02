@@ -1,44 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 	<title>GGK20</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 
 
 </head>
+
 <body>
-		<!-- The core Firebase JS SDK is always required and must be listed first -->
-		<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
-		<!-- TODO: Add SDKs for Firebase products that you want to use
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+	<!-- TODO: Add SDKs for Firebase products that you want to use
 		 https://firebase.google.com/docs/web/setup#available-libraries -->
-		<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
 
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
@@ -49,54 +51,260 @@
 				</span>
 				<form class="login100-form validate-form p-b-33 p-t-5">
 
-						  <div class="logo"> <img src="images\logo.png" style="center;">  </div>
+					<div class="logo"> <img src="images\logo.png" style="center;"> </div>
+					<div id="loginDiv" style="display: block;">
+						<div class="wrap-input100 validate-input" data-validate="Enter username">
+							<input class="input100" id="name_surname" type="text" name="username" value=""
+								placeholder="Full Name">
+							<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+						</div>
 
-					<div class="wrap-input100 validate-input" data-validate = "Enter username">
-						<input class="input100" id="name_surname" type="text" name="username" value="" placeholder="Full Name">
-						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+						<div class="wrap-input100 validate-input">
+							<input id="email" class="input100" type="text" name="pass"
+								placeholder="Enter e-mail address">
+							<span class="focus-input100" data-placeholder="&#xe80f;"></span>
+						</div>
+
+						<div class="wrap-input100 validate-input" style="text-align: center; size: 20px;">
+							<a class="check" href="rules.html"> <br> <input type="checkbox" id="check"
+									onselect="checked()" style="text-align: center;"> I agree to the terms of
+								service</a>
+
+						</div>
+
+						<div class="container-login100-form-btn m-t-32">
+							<button id="submit_btn" type="button" onclick="submitClick()" class="login100-form-btn">
+								Approve
+							</button>
+		
+							
+						</div>
+						<div style="text-align: center;">
+							<a> References</a>
+							<br>
+							<a href="https://firebase.google.com/docs/database/?utm_campaign=Firebase_featureoverview_education_database_en_08-02-16&utm_source=Firebase&utm_medium=yt-desc#how_does_it_work" >Firebase</a>
+							<br>
+							<a href="https://codepen.io/pro/?utm_source=bsa_native">Design - Codepen io </a>
+							<br>
+							<a href="https://colorlib.com/">Design</a>
+						</div>
+					</div>
+					<div id="seatDiv" class="wrap-input100 validate-input"
+						style="padding-left: 22%; padding-right: 22%;display: none;height: 400px;">
+						<form id="reservation" method="post">
+							<h1 style="margin-bottom: 10px;margin-left: 28%;margin-top: 10%;">Successful</h1>
+							<h3 style="margin-bottom: 100px;margin-left: 24%;">Your seat is ready!</h3>
+							<h1 style="margin-bottom: 10px;">Activity occupancy rate</h1>
+							<ol class="cabin fuselage" id="seatList">
+								<li class="row row--1">
+									<ol class="seats" type="A">
+										<li class="seat">
+											<input type="checkbox" id="1A" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1B" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1C" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1D" />
+											<label for="1D">&emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1F" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1F" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1F" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1F" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1F" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1F" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+									</ol>
+								</li>
+								<li class="row row--1">
+									<ol class="seats" type="A">
+										<li class="seat">
+											<input type="checkbox" id="1A" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1B" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1C" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1D" />
+											<label for="1D">&emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1F" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1F" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1F" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1F" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1F" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1F" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+									</ol>
+								</li>
+								<li class="row row--1">
+									<ol class="seats" type="A">
+										<li class="seat">
+											<input type="checkbox" id="1A" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1B" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1C" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1D" />
+											<label for="1D">&emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1F" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1F" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1F" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1F" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1F" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1F" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+									</ol>
+								</li>
+								<li class="row row--1">
+									<ol class="seats" type="A">
+										<li class="seat">
+											<input type="checkbox" id="1A" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1B" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1C" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1D" />
+											<label for="1D">&emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1F" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1F" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1F" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1F" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1F" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+										<li class="seat">
+											<input type="checkbox" id="1F" />
+											<label> &emsp13;&emsp;</label>
+										</li>
+									</ol>
+								</li>
+							</ol>
+							
+							<h2 style="margin-left: 45%; margin-top: 10px;" id="parcentageText">%0</h2>
 					</div>
 
-					<div class="wrap-input100 validate-input" >
-						<input id="email" class="input100" type="text" name="pass" placeholder="Enter e-mail address">
-						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
-					</div>
-
-					<div class="wrap-input100 validate-input" style="text-align: center; size: 20px;" >
-						<a class="check" href="rules.html"  > <br> <input type="checkbox" id="check" onselect="checked()" style="text-align: center;"> I agree to the terms of service</a>
-
-					</div>
-
-					<div class="container-login100-form-btn m-t-32">
-						<button id="submit_btn" onclick="submitClick()"  class="login100-form-btn">
-							Approve
-						</button>
-					</div>
 
 				</form>
 			</div>
+
 		</div>
 	</div>
 
 
 	<div id="dropDownSelect1"></div>
 
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="vendor/bootstrap/js/popper.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="vendor/daterangepicker/moment.min.js"></script>
 	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 
 
 </body>
 <script src="js/main.js"></script>
+
 </html>
