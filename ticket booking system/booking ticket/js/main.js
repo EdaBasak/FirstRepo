@@ -79,9 +79,10 @@ nameRef.on('child_added', snap => {
 async function submitClick() {
  await  changeForm(); 
   const isChecked = document.getElementById("check")
-  if (isChecked.checked == true) {
-    var name = names.value;
+   var name = names.value;
     var mail = emailAdress.value;
+  if (isChecked.checked == true && name.length!=null && mail.length!=null) {
+   
     console.log(name);
     console.log(mail);
     //window.alert("writeUserData work!");
