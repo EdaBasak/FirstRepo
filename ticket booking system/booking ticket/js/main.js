@@ -40,7 +40,7 @@ async function changeForm() {
     duration: 500,
     iterations: 1
   });
-  seatOccupancy();
+  seatOccupancy(80);
 }
 
 const config = {
@@ -115,7 +115,7 @@ function total(){
    });
 return totalRecord;
 }
-async function seatOccupancy() {
+async function seatOccupancy(percentage) {
   var totalRecord;
   var filledSeatCount;
   firebase.database().ref('users').on('value',(snap)=>{
