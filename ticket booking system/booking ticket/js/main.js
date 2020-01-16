@@ -44,14 +44,7 @@ async function changeForm() {
 }
 
 const config = {
-  apiKey: "AIzaSyBQZwF7-VrcLrZJ2RYTxd_ghCNK1gfLyvs",
-  authDomain: "ggk20-991b1.firebaseapp.com",
-  databaseURL: "https://ggk20-991b1.firebaseio.com",
-  projectId: "ggk20-991b1",
-  storageBucket: "ggk20-991b1.appspot.com",
-  messagingSenderId: "695934257815",
-  appId: "1:695934257815:web:498f4e8c43af4028fef7d2",
-  measurementId: "G-RPSE4722JB"
+
 };
 
 firebase.initializeApp(config);
